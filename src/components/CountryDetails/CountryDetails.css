@@ -1,0 +1,155 @@
+
+
+
+.countryDetailsSection {
+    height: calc(100vh - 80px);
+    padding: 0px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.countryDetailsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.backButton {
+    background: none;
+    border: 0px;
+    width: 146px;
+    height: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 55px 0px;
+    justify-content: center;
+
+}
+
+body.dark .backButton {
+    background: #2B3844;
+}
+
+.backButton:hover {
+    cursor: pointer;
+}
+
+
+.backButton:hover:before {
+    left: -5px;
+}
+
+.countryDetailsImg {
+    flex: 0 0 45%;
+    object-fit: contain;
+}
+
+.countryDetailsDiv {
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.leftDetails {
+    width: 50%;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.rightDetails {
+    width: 50%;
+    display: inline-block;
+    position: absolute;
+    padding-left: 10px;
+}
+.countryDetailsDiv p,
+p span.borderCountry {
+    font-weight: 200;
+}
+
+.countryDetailsDiv span,
+p.borderCountries {
+    font-weight: 600;
+}
+
+.backButton:before {
+    content: '';
+    background: url('../../assets/backArrow.png');
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 20px;
+    left: 0px;
+    transition: 0.5s ease-in-out all;
+}
+
+body.dark .backButton:before {
+    background: url('../../assets/whiteArrow.png');
+}
+
+.countryDetailsDiv h2 {
+    font-size: 32px;
+}
+
+.borderCountries {
+    margin-top: 25px;
+}
+
+.borderCountry {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    height: 28px;
+    margin: 0px 10px;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(112,112,112,1);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(112,112,112,1);
+    box-shadow: 0px 0px 2px 0px rgba(112,112,112,1);
+    border-radius: 2px;
+    margin-top: 15px;
+    transition: all 0.35s ease-in-out;
+    padding: 0px 7px;
+}
+
+.countryError h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.borderCountry:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 10px 2px 0px rgba(112,112,112,1);
+    -moz-box-shadow: 0px 10px 2px 0px rgba(112,112,112,1);
+    box-shadow: 0px 0px 10px 0px rgba(112,112,112,1);
+}  
+
+@media (max-width: 850px) {
+    .countryDetailsContainer {
+        flex-direction: column;
+    }
+
+    .countryDetailsSection {
+        padding: 0px 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .leftDetails {
+        width: 100%;
+        padding: 0px;
+        display: block;
+    }
+
+    .rightDetails {
+        width: 100%;
+        padding: 0px;
+        display: block;
+        position: relative;
+    }
+
+    .countryDetailsDiv h2 {
+        text-align: center;
+    }
+}
+
+

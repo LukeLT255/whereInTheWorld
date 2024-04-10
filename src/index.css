@@ -1,0 +1,60 @@
+body {
+    --color-background: #F2F2F2;
+    --color-foreground: #111517;
+}
+
+body.dark {
+    --color-background: #202C36;
+    --color-foreground: #FFFFFF;
+}
+
+body.countryDetails {
+    background: #FFFFFF;
+}
+
+body.countryDetails.dark {
+    background: #202C36;
+}
+
+
+body {
+    margin: 0px;
+    font-size: 14px;
+    min-height: calc(100vh - 80px);
+    background: var(--color-background);
+}
+
+h1 {
+    margin: 0px;
+}
+
+main {
+    margin-top: 80px;
+}
+
+
+
+h1, h2, h3, h4, p, a, li, button {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+    color: var(--color-foreground);
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 12px;
+    }
+
+    .left h1 {
+        font-size: 14px;
+    }
+
+    main {
+        margin-top: 110px;
+    }
+}
