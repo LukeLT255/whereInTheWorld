@@ -31,6 +31,10 @@ function App() {
     setSearchInput(searchData);
   }
 
+  function checkRegion(country) {
+    return country.region.toLowerCase() == filterInput;
+  }
+
   // eslint-disable-next-line no-unused-vars
   const handlePress = (name) => {
     setShowPageDetail(name);
@@ -54,12 +58,14 @@ function App() {
     }
     else if(searchInput && filterInput && filterInput !== 'all regions'){
       searchByName(searchInput).then((countries) => {
-        const countriesThatMatchRegion = countries.filter(checkRegion);
-        function checkRegion(country) {
-          return country.region.toLowerCase() == filterInput;
+        if(countries.message !== 'Page Not Found' && countries.status !== 404) {
+          const countriesThatMatchRegion = countries.filter(checkRegion);
+          setData(countriesThatMatchRegion);
+          setLoading(false);
+        } else {
+          setData(countries);
+          setLoading(false);
         }
-        setData(countriesThatMatchRegion);
-        setLoading(false);
       });
     }
     else if(searchInput) {
