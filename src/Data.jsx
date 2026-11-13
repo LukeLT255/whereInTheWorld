@@ -11,13 +11,13 @@ function Data(searchByName = false, filterByRegion = false, specificCountry=fals
             try {
                 let response = '';
                 if(searchByName) {
-                    response = await fetch(`https://restcountries.com/v3.1/ ${searchByName}`);
+                    response = await fetch(`https://restcountries.com/v5/ ${searchByName}`, { headers: { 'Authorization': 'Bearer rc_live_8f415d8a458f4ca38192714bd1ed7da7' } });
                 }else if(specificCountry) {
-                    response = await fetch(`https://restcountries.com/v3.1/name/${specificCountry}?fulltext=true`);
+                    response = await fetch(`https://restcountries.com/v5/name/${specificCountry}?fulltext=true`, { headers: { 'Authorization': 'Bearer rc_live_8f415d8a458f4ca38192714bd1ed7da7' } });
                 }else if(borderCountries) {
-                    response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderCountries.countryInfo[0].borders.toString()}`);
+                    response = await fetch(`https://restcountries.com/v5/alpha?codes=${borderCountries.countryInfo[0].borders.toString()}`, { headers: { 'Authorization': 'Bearer rc_live_8f415d8a458f4ca38192714bd1ed7da7' } });
                 } else {
-                    response = await fetch('https://restcountries.com/v3.1/all?fields=name,capital,region,flags,population');
+                    response = await fetch('https://restcountries.com/v5/all?fields=name,capital,region,flags,population', { headers: { 'Authorization': 'Bearer rc_live_8f415d8a458f4ca38192714bd1ed7da7' } });
                 }
                 const result = await response.json();
                 setCountryData(result);
